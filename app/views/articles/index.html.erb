@@ -1,0 +1,23 @@
+
+<body>
+    <main id = 'index'>
+    <header>
+        <nav class = 'nav-bar'>
+            <ul>
+                <li><%= link_to 'Create New Article', new_article_path %></li>
+            </ul>
+        </nav>
+    </header>
+    <section class= 'title'>
+        <h1>Articles</h1>
+    </section>
+    
+         <% @articles.each do |article| %>
+        <section class = 'article'>
+            <h2>ID: <%= article.id%>| Title: <%= link_to article.name , show_article_path(article)%></h2>
+            <p><%= article.body%></p>
+            <%= link_to "Delete Article", delete_article_path(article), method: :delete, data: { confirm: "Are you sure you want to delete this article? #{article.name}" } %>
+        </section>
+        <% end %>
+    </main>
+</body>
