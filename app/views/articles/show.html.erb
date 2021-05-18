@@ -1,7 +1,9 @@
 <section class = 'content-container' id = 'show'>
     <div class = 'show-content'>
-        <h1><%= @article.name %></h1>
-        <%= link_to 'Edit', edit_article_path(@article)%>
+        <div class = 'title-show-content'>
+            <h1><%= @article.name %></h1>
+            <%= link_to 'Edit', edit_article_path(@article), class: 'edit'%>
+        </div>
         <p><%= @article.body %></p>
     </div>
 </section>
