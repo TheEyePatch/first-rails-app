@@ -12,7 +12,7 @@ class ArticlesController < ApplicationController
             @article.save
             redirect_to articles_path
         else
-            render :new
+            redirect_to new_article_path, notice: @article.errors.full_messages
         end
     end
     def show
@@ -26,7 +26,7 @@ class ArticlesController < ApplicationController
         if  @article.update(create_params)
             redirect_to articles_path
         else
-            render :edit
+            redirect_to edit_article_path, notice: @article.errors.full_messages
         end
     end
     def destroy
