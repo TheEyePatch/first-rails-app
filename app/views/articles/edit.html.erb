@@ -1,4 +1,5 @@
 <section class = 'content-container' id = 'edit'>
+    <h1>Edit Article</h1>
     <%= form_with scope: :article, url: update_article_path, method: :put, local: true do |f| %>
         <% flash.each do |type, msg| %>
                     <div class = 'error-container'>

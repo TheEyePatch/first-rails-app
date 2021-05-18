@@ -30,6 +30,7 @@
 .nav-bar .nav-link{ 
     text-decoration: none;
     color:rgb(248, 246, 236);
+    font-variant: small-caps;
 }
 .nav-bar .nav-link:hover{
     color:rgb(0, 140, 255);
@@ -39,6 +40,7 @@
 .nav-bar .nav-title{
     font-size: 15px;
     display: flex;
+    cursor: pointer;
 }
 .logo{
     height: 30px;
@@ -78,12 +80,16 @@
     padding-bottom: 10px;
 }
 .delete{
-    color:rgb(0, 140, 255);
+    position: relative;
+    top: 1rem;
+    border-radius: 10px;
+    background-color: rgb(216, 67, 67);
+    color:white;
+    padding: .5rem;
     text-decoration: none;
 }
 .delete:hover{
-    color:rgb(3, 105, 189);
-    text-decoration: underline 2px;
+    box-shadow: 1px 1px 5px black;
 }
 
 /*=============== SHOW =====================*/
@@ -124,7 +130,8 @@
 
 #new, #edit{
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 #new .title-input, #edit .title-input{
     padding: 5px;
@@ -140,13 +147,13 @@
 /*====== ERROR FOR EDIT AND NEW ======================*/
 .error-container{
     position: fixed;
-    background-color: rgb(109, 202, 109);
+    background-color: rgb(189, 92, 92);
     top: 30%;
     left: 50%;
     transform: translateX(-50%);
     padding: 1rem;
     line-height: 2;
-    color: rgb(1, 51, 1);
+    color: rgb(80, 3, 3);
 }
 .error-container button{
     background-color: transparent;
