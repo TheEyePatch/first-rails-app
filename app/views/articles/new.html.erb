@@ -1,15 +1,18 @@
 
     <section class = 'content-container' id = 'new'>
         <%= form_with scope: :article, url: articles_path, local: true do |f| %>
-                <div>
-                    <% if @article.errors.any? %>
-                    <ul>
-                        <% @article.errors.full_messages.each do |message| %>
-                            <li><%= message.upcase %></li>
+                               
+                <% flash.each do |type, msg| %>
+                    <div class = 'error-container'>
+                        <% msg.each do |error| %>
+                            <div class = 'error'>
+                                <strong><%= error%>!</strong> 
+                            </div>
                         <% end %>
-                    </ul>
-                    <% end %>
-                </div>
+                        <a href = '#new'><button>Ok</button></a>
+                    </div>
+                <% end %>
+                 
                 <div>
                     <%= f.label 'Title'%><br>
                     <%= f.text_field :name, class: 'title-input'%>
@@ -19,7 +22,7 @@
                     <%= f.text_area :body , size: '80x20'%>
                 </div>
                 <div class = 'submit-btn'>
-                    <%= f.submit 'Create Article' %>
+                    <%= f.submit 'Create Article', class: 'submit-button' %>
                 </div>
             <% end %>
     </section>
