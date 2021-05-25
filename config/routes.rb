@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   get '/articles/edit/:id' => 'articles#edit', as: 'edit_article'
   put '/articles/:id' => 'articles#update', as: 'update_article'
   
+  root to: 'articles#index'
   
 end
